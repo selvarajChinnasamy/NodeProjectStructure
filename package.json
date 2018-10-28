@@ -1,7 +1,7 @@
 {
     "scripts": {
         "test": "DEV_ENV=development mocha --timeout 30000 ./test/**/*.js --exit"
-      },
+    },
     "dependencies": {
         "body-parser": "^1.18.3",
         "dotenv": "^6.1.0",
