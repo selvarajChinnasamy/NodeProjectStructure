@@ -4,6 +4,7 @@
 # dependencies
 /node_modules
 package-lock
+/.nyc_output
 
 # IDEs and editors
 /.idea
