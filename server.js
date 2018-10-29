@@ -8,6 +8,9 @@ const express = require('express'),
 
 app.use(bodyParser.json());
 
+
+app.use(middlewares.enableCors);
+
 // initiate Logger
 logger.initLogger();
 

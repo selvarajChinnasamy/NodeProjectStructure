@@ -9,7 +9,7 @@ global.connection = undefined;
 const db = {};
 
 try {
-    global.connection = mongoose.connect(mongoDB);
+    global.connection = mongoose.connect(mongoDB,  { useNewUrlParser: true });
     global.connection.insertQuery = function (tableName, value) {
         return new Promise((resolve, reject) => {
             new getModel(tableName)(value).save(function (err, data) {
