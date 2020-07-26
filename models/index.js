@@ -1,35 +1,25 @@
-const mongoose = require('mongoose'),
-     mongoDB = process.env.DB_HOSTNAME;
-     getModel = require('../libs/product.schema'),
-     fs = require('fs'),
-     path = require('path');
+const mysql = require('mysql'),
+    env = process.env.DEV_ENV || 'development',
+    config = require(`../config/environments/${env}`),
+    fs = require('fs'),
+    path = require('path');
 
-global.connection = undefined;
+global.connection = {
+    execute : undefined
+};
 
 const db = {};
 
 try {
-    global.connection = mongoose.connect(mongoDB,  { useNewUrlParser: true });
-    global.connection.insertQuery = function (tableName, value) {
+    global.connection.execute = function (sql, value) {
         return new Promise((resolve, reject) => {
-            new getModel(tableName)(value).save(function (err, data) {
-                if (err) {
-                    return reject(err);
-                }
-                return resolve(data);
+            const connection = mysql.createConnection(config.db);
+            connection.query(sql, value, function (err, result) {
+                if (err) return reject(err);
+                return resolve(result);
             });
         });
-    }
-    global.connection.getQuery = function (tableName) {
-        return new Promise((resolve, reject) => {
-            new getModel(tableName).find(function (err, data) {
-                if (err) {
-                    return reject(err);
-                }
-                return resolve(data);
-            });
-        });
-    }
+    };
     global.logger.info('DB connection established');
 } catch (err) {
     global.logger.info(err);

@@ -1,0 +1,1619 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is API specification document for Hit it Solution",
+        "version": "2.0.0",
+        "title": "Hit It Solution"
+    },
+    "basePath": "/api/hitit",
+    "schemes": [
+        "http",
+        "http"
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "Common"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/loginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request Successful",
+                        "schema": {
+                            "$ref": "#/definitions/loginResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid User",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/collegehr-data": {
+            "post": {
+                "tags": [
+                    "College HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/collegeHrData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/depthr-data": {
+            "post": {
+                "tags": [
+                    "Department HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/deptHrData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/student-data": {
+            "post": {
+                "tags": [
+                    "Student"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/studentData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/student-data/{userId}": {
+            "get": {
+                "tags": [
+                    "Student"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request Successful",
+                        "schema": {
+                            "$ref": "#/definitions/userResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid User",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/depthr-data/{depthrId}": {
+            "get": {
+                "tags": [
+                    "Department HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "depthrId",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request Successful",
+                        "schema": {
+                            "$ref": "#/definitions/userResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid User",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/collegehr-data/{collegehrId}": {
+            "get": {
+                "tags": [
+                    "College HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "collegehrId",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request Successful",
+                        "schema": {
+                            "$ref": "#/definitions/userResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid User",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/register/college": {
+            "post": {
+                "tags": [
+                    "College"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createCollageRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/register/collegehr": {
+            "post": {
+                "tags": [
+                    "College HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createCollageHr"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/register/depthr": {
+            "post": {
+                "tags": [
+                    "College HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createDeptHr"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/register/student": {
+            "post": {
+                "tags": [
+                    "Department HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createStudents"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/register/company": {
+            "post": {
+                "tags": [
+                    "Company"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/companyData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/create-dept": {
+            "post": {
+                "tags": [
+                    "College HR"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createDept"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/create": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/createEvent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/intrest": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/eventIntrest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/attendance": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/eventAttendance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/vote/create": {
+            "post": {
+                "tags": [
+                    "Votings"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/voteData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/vote/accept": {
+            "post": {
+                "tags": [
+                    "Votings"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/voteAccept"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/event/{userId}/{offset}/{totalRecords}": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "offset",
+                        "type": "number",
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "totalRecords",
+                        "type": "number",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Request Successful",
+                        "schema": {
+                            "$ref": "#/definitions/eventsResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid User",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/digital-resourse": {
+            "post": {
+                "tags": [
+                    "Digital Resourse"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/digitalResourseAdd"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/get-digital-resourse/{userId}": {
+            "get": {
+                "tags": [
+                    "Digital Resourse"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Succesful",
+                        "schema": {
+                            "$ref": "#/definitions/getDigitalResourse"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        },
+        "/message-inbox/{userId}": {
+            "get": {
+                "tags": [
+                    "Message"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Created Successful",
+                        "schema": {
+                            "$ref": "#/definitions/messageGetResponce"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content",
+                        "schema": {
+                            "$ref": "#/definitions/successResponce"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Data",
+                        "schema": {
+                            "$ref": "#/definitions/errorResponce"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "messageGetResponce": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "isFIle": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "getDigitalResourse": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "resourseName": {
+                        "type": "string"
+                    },
+                    "resourseType": {
+                        "type": "string"
+                    },
+                    "discription": {
+                        "type": "string"
+                    },
+                    "resourseId": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "digitalResourseAdd": {
+            "type": "object",
+            "properties": {
+                "resourseName": {
+                    "type": "string"
+                },
+                "resourseType": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "collegeId": {
+                    "type": "string"
+                },
+                "isForall": {
+                    "type": "boolean"
+                },
+                "discription": {
+                    "type": "string"
+                },
+                "file": {
+                    "type": "string",
+                    "format": "binary"
+                }
+            }
+        },
+        "eventsResponce": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "eventName": {
+                        "type": "string"
+                    },
+                    "eventType": {
+                        "type": "string"
+                    },
+                    "eventDescrib": {
+                        "type": "string"
+                    },
+                    "dateFrom": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "dateTo": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "venue": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "voteAccept": {
+            "type": "object",
+            "properties": {
+                "voteId": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "accept": {
+                    "type": "boolean"
+                },
+                "reason": {
+                    "type": "string"
+                }
+            }
+        },
+        "voteData": {
+            "type": "object",
+            "properties": {
+                "voteTitle": {
+                    "type": "string"
+                },
+                "voteDescrib": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "dateStart": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateEnd": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "isforAll": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "eventAttendance": {
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "attendance": {
+                    "type": "string"
+                }
+            }
+        },
+        "eventIntrest": {
+            "type": "object",
+            "properties": {
+                "eventId": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "accept": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "createEvent": {
+            "type": "object",
+            "properties": {
+                "eventName": {
+                    "type": "string"
+                },
+                "eventType": {
+                    "type": "string"
+                },
+                "eventDescrib": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "dateFrom": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dateTo": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "venue": {
+                    "type": "string"
+                },
+                "getIntrested": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "createDept": {
+            "type": "object",
+            "properties": {
+                "collegeId": {
+                    "type": "string"
+                },
+                "deptName": {
+                    "type": "string"
+                },
+                "deptPhone": {
+                    "type": "number"
+                },
+                "deptGroupEmail": {
+                    "type": "string"
+                }
+            }
+        },
+        "companyData": {
+            "type": "object",
+            "properties": {
+                "companyName": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "mailId": {
+                    "type": "string"
+                },
+                "companyTech": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "companyBranchs": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "branchName": {
+                                "type": "string"
+                            },
+                            "branchLocationCity": {
+                                "type": "string"
+                            },
+                            "mailId": {
+                                "type": "string"
+                            },
+                            "isheadBranch": {
+                                "type": "boolean"
+                            },
+                            "projects": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "projectName": {
+                                            "type": "string"
+                                        },
+                                        "projectType": {
+                                            "type": "string"
+                                        },
+                                        "projectDescrib": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "collegeHrData": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "collegehrId": {
+                    "type": "string"
+                },
+                "collegeHrName": {
+                    "type": "string"
+                },
+                "collegeHrPhone": {
+                    "type": "number"
+                },
+                "altCollegeHrPhone": {
+                    "type": "number"
+                }
+            }
+        },
+        "deptHrData": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "deptId": {
+                    "type": "string"
+                },
+                "deptHrName": {
+                    "type": "string"
+                },
+                "deptHrPhone": {
+                    "type": "number"
+                },
+                "altDeptHrPhone": {
+                    "type": "number"
+                }
+            }
+        },
+        "studentData": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "currentCGPA": {
+                    "type": "number"
+                },
+                "arrear": {
+                    "type": "boolean"
+                },
+                "tenthPersentage": {
+                    "type": "number"
+                },
+                "twelvthPersentage": {
+                    "type": "number"
+                },
+                "deplomoPersentage": {
+                    "type": "number"
+                },
+                "parentPh": {
+                    "type": "number"
+                },
+                "studentPh": {
+                    "type": "number"
+                },
+                "mailId": {
+                    "type": "string"
+                },
+                "alterParentPh": {
+                    "type": "number"
+                },
+                "altStudentPh": {
+                    "type": "number"
+                },
+                "aboutMe": {
+                    "type": "string"
+                },
+                "aboutMeFiveWords": {
+                    "type": "string"
+                },
+                "userImage": {
+                    "type": "string"
+                },
+                "userMoto": {
+                    "type": "string"
+                },
+                "skils": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "hoobies": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "certificates": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "certificateName": {
+                                "type": "string"
+                            },
+                            "certificateFile": {
+                                "type": "string",
+                                "format": "binary"
+                            },
+                            "certificateDescrib": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "userUrls": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "userProjects": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            },
+                            "projectTitle": {
+                                "type": "string"
+                            },
+                            "projectDesc": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "userAchievements": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "achievementFile": {
+                                "type": "string"
+                            },
+                            "descrip": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "createStudents": {
+            "type": "object",
+            "properties": {
+                "userEmail": {
+                    "type": "string"
+                },
+                "collegeId": {
+                    "type": "string"
+                },
+                "deptId": {
+                    "type": "string"
+                }
+            }
+        },
+        "createDeptHr": {
+            "type": "object",
+            "properties": {
+                "userEmail": {
+                    "type": "string"
+                },
+                "deptId": {
+                    "type": "string"
+                },
+                "collegeId": {
+                    "type": "string"
+                }
+            }
+        },
+        "createCollageHr": {
+            "type": "object",
+            "properties": {
+                "userEmail": {
+                    "type": "string"
+                },
+                "collegeId": {
+                    "type": "string"
+                }
+            }
+        },
+        "createCollageRequest": {
+            "type": "object",
+            "properties": {
+                "collegeName": {
+                    "type": "string"
+                },
+                "website": {
+                    "type": "string"
+                },
+                "collegeDetail": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "college_email": {
+                                "type": "string"
+                            },
+                            "college_group_email": {
+                                "type": "string"
+                            },
+                            "college_phone": {
+                                "type": "number"
+                            },
+                            "college_address": {
+                                "type": "object",
+                                "properties": {
+                                    "pincode": {
+                                        "type": "number"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string"
+                                    },
+                                    "district": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "successResponce": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "errorResponce": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "loginRequest": {
+            "type": "object",
+            "properties": {
+                "mail_id": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "loginResponce": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "userId": {
+                            "type": "string"
+                        },
+                        "userRole": {
+                            "type": "string"
+                        },
+                        "userImage": {
+                            "type": "string",
+                            "format": "url"
+                        },
+                        "userToken": {
+                            "type": "string"
+                        },
+                        "userProfileFulfilled": {
+                            "type": "boolean"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "userResponce": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "userLatestActivites": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "activites": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "time": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                },
+                                                "location": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "latestPlacementActivites": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "companies": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "companyName": {
+                                                    "type": "string"
+                                                },
+                                                "companyType": {
+                                                    "type": "string"
+                                                },
+                                                "companyUrl": {
+                                                    "type": "string",
+                                                    "format": "url"
+                                                },
+                                                "companyPackage": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "latestEventActivites": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "events": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "eventName": {
+                                                    "type": "string"
+                                                },
+                                                "eventType": {
+                                                    "type": "string"
+                                                },
+                                                "eventLocation": {
+                                                    "type": "string"
+                                                },
+                                                "eventOrganizer": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "suggestions": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "suggestionType": {
+                                        "type": "string"
+                                    },
+                                    "suggestionMessage": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "placementGraph": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "mounth": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "persentage": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "eventGraph": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "mounth": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "persentage": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "performanceGraph": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "mounth": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "persentage": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

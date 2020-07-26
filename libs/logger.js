@@ -1,5 +1,4 @@
 const winston = require('winston'),
-  expressWinston = require('express-winston-2'),
   env = process.env.DEV_ENV || 'development',
   configuration = require(`../config/environments/${env}`);
 

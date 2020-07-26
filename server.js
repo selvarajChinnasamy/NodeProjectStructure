@@ -6,21 +6,23 @@ const express = require('express'),
     port = process.env.APP_API_PORT || 3002,
     bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+global.jwt = require('jsonwebtoken');
 
 app.use(middlewares.enableCors);
 
 // initiate Logger
 logger.initLogger();
 
+// Authenticate Token
+app.use(middlewares.authenticate);
+
 const apiRouter = require('./controllers/api');
 
 // log HTTP Request
-app.use(logger.httpLogger);
-
-// Authenticate Token
-app.use(middlewares.authenticate);
+// app.use(logger.httpLogger);
 
 
 // just to check our app is up
@@ -35,5 +37,3 @@ app.use('/api', apiRouter);
 app.use(middlewares.errorHandler);
 
 app.listen(port, () => console.log('App booted'));
-
-module.exports = app;
